@@ -1,0 +1,93 @@
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --primary-color: #ffffff;
+  --secondary-color: #00c6ff;
+  --accent-color: #ff00c8;
+  --neutral-color: rgba(255, 255, 255, 0.2);
+  --padding: 12px;
+  --margin: 12px;
+  --border-radius: 14px;
+  --blur: 20px;
+  --transition: 0.3s ease;
+}
+
+/* Stopwatch Container */
+.stopwatch {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(var(--blur));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: calc(var(--padding) * 2);
+  text-align: center;
+  width: 320px;
+}
+
+/* Time Display */
+.stopwatch-time {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: var(--margin);
+}
+
+.stopwatch-time-min {
+  color: var(--secondary-color);
+}
+
+.stopwatch-time-sec {
+  color: var(--primary-color);
+}
+
+.stopwatch-time-msec {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+.stopwatch-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--margin);
+}
+
+.stopwatch-btns button {
+  flex: 1;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+
+.stopwatch-btn-start {
+  background: linear-gradient(to bottom, #00c6ff, #0072ff);
+}
+
+.stopwatch-btn-start:hover {
+  background: linear-gradient(to bottom, #33d6ff, #3399ff);
+}
+
+.stopwatch-btn-stop {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0.2));
+  color: #ddd;
+}
+
+.stopwatch-btn-stop:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.stopwatch-btn-reset {
+  background: linear-gradient(to bottom, #ff00c8, #b30089);
+}
+
+.stopwatch-btn-reset:hover {
+  background: linear-gradient(to bottom, #ff33d6, #cc33a3);
+}

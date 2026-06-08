@@ -1,0 +1,171 @@
+
+:root {
+  /* Typography */
+  --font-family: 'Poppins', sans-serif;
+  --font-size: 16px;
+  --font-weight: 400;
+
+  /* Colors */
+  --primary-color: #ffffff;
+  --secondary-color: #229ebdb7;
+  --ternary-color:#0b0a0aac;
+  --accent-color: #0015ffd0;
+  --text-color: #150303f7;
+
+  /* Backgrounds */
+  --glass-bg: rgba(255, 255, 255, 0.279);
+  --glass-border: rgba(255, 255, 255, 0.3);
+
+  /* Spacing */
+  --padding: 12px;
+  --margin: 12px;
+  --border-radius: 12px;
+
+  /* Effects */
+  --blur: 20px;
+  --transition: 0.3s ease;
+}
+
+/* Global reset */
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Container */
+.to-do-container {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  padding: calc(var(--padding) * 2);
+  margin: var(--margin);
+  backdrop-filter: blur(var(--blur));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  text-align: center;
+}
+
+/* Heading */
+.to-do-container h1 {
+  margin-bottom: var(--margin);
+  padding-bottom: var(--padding);
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Input + Button Row */
+.inner-container {
+  display: flex;
+  gap: var(--margin);
+  margin-bottom: var(--margin);
+}
+
+.inner-container input {
+  flex: 1;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--ternary-color);
+  outline: none;
+}
+
+.inner-container button {
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: none;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.inner-container button:hover {
+  background: var(--secondary-color);
+}
+
+/* Task List */
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  margin-bottom: var(--margin);
+  transition: var(--transition);
+}
+
+li:hover {
+  transform: translateY(-2px);
+}
+
+/* Task Text */
+.text {
+  flex: 1;
+  text-align: left;
+  color: var(--ternary-color);
+}
+
+/* Buttons */
+li button {
+  margin-left: var(--margin);
+  padding: 6px 10px;
+  border-radius: var(--border-radius);
+  border: none;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+li button:hover {
+  background: var(--secondary-color);
+}
+/* Toggle Button */
+.toggle-btn {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  padding: var(--padding);
+  cursor: pointer;
+  backdrop-filter: blur(var(--blur));
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5f5;
+}
+
+/* Hover effect */
+.toggle-btn:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  --primary-color: #ffffff;
+  --secondary-color: #1f1f1f;
+  --ternary-color: #e0e0e0;
+  --accent-color: #063a7e;
+  --text-color: #f5f5f5;
+  --glass-bg: rgba(104, 97, 97, 0.255);
+  --glass-border: rgba(255, 255, 255, 0.073);
+}
