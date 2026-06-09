@@ -1,93 +1,94 @@
 :root {
+  /* Typography */
   --font-family: 'Poppins', sans-serif;
+  --font-size: 18px;
+  --font-weight: 500;
+
+  /* Colors */
   --primary-color: #ffffff;
-  --secondary-color: #00c6ff;
-  --accent-color: #ff00c8;
-  --neutral-color: rgba(255, 255, 255, 0.2);
+  --secondary-color: #08253a;
+  --accent-color: #2b2d2f;
+  --text-color: #f0f0f0;
+
+  /* Backgrounds */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.3);
+
+  /* Spacing */
   --padding: 12px;
   --margin: 12px;
-  --border-radius: 14px;
+  --border-radius: 12px;
+
+  /* Effects */
   --blur: 20px;
   --transition: 0.3s ease;
 }
 
-/* Stopwatch Container */
-.stopwatch {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--border-radius);
-  backdrop-filter: blur(var(--blur));
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  padding: calc(var(--padding) * 2);
-  text-align: center;
-  width: 320px;
-}
-
-/* Time Display */
-.stopwatch-time {
+/* Global reset */
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  color: var(--text-color);
   display: flex;
   justify-content: center;
-  align-items: baseline;
-  gap: 8px;
-  font-family: var(--font-family);
-  font-weight: 600;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Stopwatch container */
+.stopwatch {
+  background: var(--glass-bg);
+  border: 2px solid var(--glass-border);
+  border-radius: 50px;
+  padding: calc(var(--padding) * 2);
+  margin: var(--margin);
+  backdrop-filter: blur(var(--blur));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  width: 300px;
+}
+
+/* Time display */
+.stopwatch-time {
   font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-color);
   margin-bottom: var(--margin);
 }
 
-.stopwatch-time-min {
-  color: var(--secondary-color);
-}
-
-.stopwatch-time-sec {
-  color: var(--primary-color);
-}
-
-.stopwatch-time-msec {
-  color: var(--accent-color);
-  font-size: 1.2rem;
-}
-
-/* Buttons */
+/* Buttons container */
 .stopwatch-btns {
   display: flex;
   justify-content: space-between;
   gap: var(--margin);
 }
 
+/* Buttons */
 .stopwatch-btns button {
   flex: 1;
   padding: var(--padding);
   border-radius: var(--border-radius);
   border: none;
-  cursor: pointer;
-  font-weight: 600;
+  background: blue;
   color: var(--primary-color);
+  cursor: pointer;
   transition: var(--transition);
-  backdrop-filter: blur(10px);
 }
 
-.stopwatch-btn-start {
-  background: linear-gradient(to bottom, #00c6ff, #0072ff);
+.stopwatch-btns button:hover {
+  background: hsla(240, 100%, 50%, 0.677);
+  transform: translateY(-2px);
+}
+.dark-mode {
+  --primary-color: #ffffff;
+  --secondary-color: #1f1f1f;
+  --ternary-color: #e0e0e0;
+  --accent-color: #063a7e;
+  --text-color: #f5f5f5;
+  --glass-bg: rgba(104, 97, 97, 0.255);
+  --glass-border: rgba(255, 255, 255, 0.073);
 }
 
-.stopwatch-btn-start:hover {
-  background: linear-gradient(to bottom, #33d6ff, #3399ff);
-}
-
-.stopwatch-btn-stop {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0.2));
-  color: #ddd;
-}
-
-.stopwatch-btn-stop:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-.stopwatch-btn-reset {
-  background: linear-gradient(to bottom, #ff00c8, #b30089);
-}
-
-.stopwatch-btn-reset:hover {
-  background: linear-gradient(to bottom, #ff33d6, #cc33a3);
-}
