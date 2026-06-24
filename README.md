@@ -77,6 +77,7 @@ npm run preview
 ```
 
 ## Notes
+-These projects cover all bigneer to Intermediate level React Js concept such as {componects-reusebilty , props , Rendering , Api calling ,React Hooks - useState , useEffect , useRef etc , Form haldling , Events}
 - These projects use Vite and React. A Node.js environment is required.
 - If you open a folder in VS Code, make sure the correct project folder is active for the terminal.
 - For the `Gallery app`, create a `.env` file with:
